@@ -1,14 +1,3 @@
-// let nombre= prompt("ingrese su nombre");
-// alert("hola, " + nombre + "!");
-
-// let edad= Number(prompt("ingrese su edad"));
-// let futuro= 5 + edad
-// alert("en 5 años tendra" + futuro);
-// alert("en 10 años tendra" + (edad + 10)); 
-
-
-
-
 let nombre = prompt("Ingrese su nombre");
 let edad = parseInt(prompt("Ingrese su edad"));
 
