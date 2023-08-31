@@ -18,67 +18,144 @@
 
 
 
-//Clases
-class Producto {
-  constructor(id, nombre, precio) {
-    this.id = id;
-    this.nombre = nombre;
-    this.precio = precio;
-  }
+// //Clases
+// class Producto {
+//   constructor(id, nombre, precio) {
+//     this.id = id;
+//     this.nombre = nombre;
+//     this.precio = precio;
+//   }
+// }
+
+// // Funciones
+
+// // Usando el array productos, retorna un string con la información de los productos disponibles
+// const generarListaProductos = () => {
+//   let mensaje = "Productos disponibles en nuestra tienda: \n";
+//   let info = productos.map(
+//     (prod) => `Id: ${prod.id} - Nombre: ${prod.nombre} - Precio: ${prod.precio}`
+//   );
+//   mensaje += info.join("\n");
+//   mensaje +=
+//     "\nIngrese el Id del producto que desea comprar. De otro modo ingrese 0 para salir";
+//   return mensaje;
+// };
+
+// // array de objetos
+// const productos = [
+//   new Producto(1, "Alimento para perros", 36580),
+//   new Producto(2, "Alimento para gatos", 48350),
+//   new Producto(3, "Antipulga", 10500),
+//   new Producto(4, "Gotita para ojos", 2000),
+//   new Producto(5, "Pouch", 8900),
+//   new Producto(6, "Corta uñas", 25000),
+//   new Producto(7, "Insulina", 6000),
+// ];
+
+// alert("Bienvenido a Patitas");
+
+// let usuario = prompt("Ingrese su nombre");
+
+// if (usuario == "Julian" || usuario == "Julian") {
+//   alert("Binvenido a Patitas Julian!");
+// }
+
+// let precioTotal = 0;
+
+// let idProducto = Number(prompt(generarListaProductos()));
+
+// while (idProducto !== 0) {
+//   let productoInfo = productos.find((prod) => prod.id === idProducto);
+
+//   if (productoInfo) {
+//     precioTotal += productoInfo.precio;
+//     alert(
+//       `Se agregó el producto ${productoInfo.nombre} con precio: $${productoInfo.precio} ARS`
+//     );
+//   } else {
+//     alert(`Error! el ID es inexistente`);
+//   }
+
+//   idProducto = Number(prompt(generarListaProductos()));
+// }
+
+// //Final de la compra. Muestra precio final
+// alert(`Finalizaste tu compra!. 
+// Tu precio total es de: ${precioTotal} ARS`);
+
+
+// Manejar el evento de clic en el botón "Comprar"
+// document.getElementById("comprarBtn").addEventListener("click", function() {
+//   const productoSeleccionado = document.getElementById("producto").value;
+  
+//   // Simulación de proceso de compra
+//   const resultadoCompra = simularCompra(productoSeleccionado);
+  
+//   // Mostrar el resultado en el DOM
+//   mostrarResultado(resultadoCompra);
+  
+//   // Almacenar el resultado en el Storage
+//   almacenarEnStorage("ultimaCompra", resultadoCompra);
+// });
+
+// // Función de simulación de compra
+// function simularCompra(producto) {
+//   // Simulación de proceso de compra y generar un mensaje de resultado
+//   const productos = {
+//       "1": "Producto A",
+//       "2": "Producto B",
+//       "3": "Producto C"
+//   };
+  
+//   return `¡Has comprado ${productos[producto]} con éxito!`;
+// }
+
+// // Función para mostrar el resultado en el DOM
+// function mostrarResultado(resultado) {
+//   const resultadoDiv = document.getElementById("resultado");
+//   resultadoDiv.textContent = resultado;
+// }
+
+// // Función para almacenar datos en el Storage
+// function almacenarEnStorage(clave, valor) {
+//   localStorage.setItem(clave, valor);
+// }
+
+// function mostrarResultado(resultado) {
+//   const resultadoDiv = }
+
+document.getElementById("comprarBtn").addEventListener("click", function() {
+  const productoSeleccionado = document.getElementById("producto").value;
+
+  // Simulación de proceso de compra
+  const resultadoCompra = simularCompra(productoSeleccionado);
+
+  // Mostrar el resultado en el DOM
+  mostrarResultado(resultadoCompra);
+
+  // Almacenar el resultado en el Storage
+  almacenarEnStorage("ultimaCompra", resultadoCompra);
+});
+
+// Función de simulación de compra
+function simularCompra(producto) {
+  // Simulación de proceso de compra y generar un mensaje de resultado
+  const productos = {
+    "1": "Producto A",
+    "2": "Producto B",
+    "3": "Producto C"
+  };
+
+  return `¡Has comprado ${productos[producto]} con éxito!`;
 }
 
-// Funciones
-
-// Usando el array productos, retorna un string con la información de los productos disponibles
-const generarListaProductos = () => {
-  let mensaje = "Productos disponibles en nuestra tienda: \n";
-  let info = productos.map(
-    (prod) => `Id: ${prod.id} - Nombre: ${prod.nombre} - Precio: ${prod.precio}`
-  );
-  mensaje += info.join("\n");
-  mensaje +=
-    "\nIngrese el Id del producto que desea comprar. De otro modo ingrese 0 para salir";
-  return mensaje;
-};
-
-// array de objetos
-const productos = [
-  new Producto(1, "Alimento para perros", 36580),
-  new Producto(2, "Alimento para gatos", 48350),
-  new Producto(3, "Antipulga", 10500),
-  new Producto(4, "Gotita para ojos", 2000),
-  new Producto(5, "Pouch", 8900),
-  new Producto(6, "Corta uñas", 25000),
-  new Producto(7, "Insulina", 6000),
-];
-
-alert("Bienvenido a Patitas");
-
-let usuario = prompt("Ingrese su nombre");
-
-if (usuario == "Julian" || usuario == "Julian") {
-  alert("Binvenido a Patitas Julian!");
+// Función para mostrar el resultado en el DOM
+function mostrarResultado(resultado) {
+  const resultadoDiv = document.getElementById("resultado");
+  resultadoDiv.textContent = resultado;
 }
 
-let precioTotal = 0;
-
-let idProducto = Number(prompt(generarListaProductos()));
-
-while (idProducto !== 0) {
-  let productoInfo = productos.find((prod) => prod.id === idProducto);
-
-  if (productoInfo) {
-    precioTotal += productoInfo.precio;
-    alert(
-      `Se agregó el producto ${productoInfo.nombre} con precio: $${productoInfo.precio} ARS`
-    );
-  } else {
-    alert(`Error! el ID es inexistente`);
-  }
-
-  idProducto = Number(prompt(generarListaProductos()));
+// Función para almacenar datos en el Storage
+function almacenarEnStorage(clave, valor) {
+  localStorage.setItem(clave, valor);
 }
-
-//Final de la compra. Muestra precio final
-alert(`Finalizaste tu compra!. 
-Tu precio total es de: ${precioTotal} ARS`);
